@@ -88,9 +88,26 @@ without extensive knowledge of the \Cyclus framework.
 
 The validation paper \cite{feng_standardized_2016}
 has comprehensive simulation parameters that allows
-a construction of a \Cyclus input file. In this
+us to reproduce the transition scenario in \Cyclus.
+In this
 study, we used the \Cycamore library to model
 all fuel cycle facilities. \Cycamore libraries contain
-the simplest fuel cycle facility models. For example,
+simple fuel cycle facility models. For example,
 the Reactor module does depletion calculations through
 user-defined recipes.
+
+\Cyclus' default timestep is a month. However, for this
+study, since the verification paper mentions annual
+rates of material flow or processing, we change the \Cyclus
+simulation timestep to a year. This is done easily
+by changing the simulation parameter \texttt{dt} in the input file.
+
+\Cyclus outputs files in either \texttt{.sqlite} or
+\texttt{.h5} format. In this study, we used the 
+\texttt{.sqlite} format and analyzed the output file
+using a python script.
+
+The input file and analysis procedures are all in
+[zenodo].
+
+
