@@ -76,38 +76,31 @@ agents make requests for materials or bid to supply them and exchange
 with one another. A market-like mechanism called the dynamic resource exchange
 \cite{gidden_agent-based_2015} governs the exchanges.
 Each material resource has a quantity, composition, name, and a unique identifier
-for output analysis.
+for output analysis. The timestep execution in \Cyclus follows 
+\texttt{Build, Tick, \gls{DRE}, Tock, and Decommission}, as illustrated in
+figure \ref{fig:time}.
+
+\begin{figure}[h]
+\centering
+\scalebox{0.7}{
+\begin{tikzpicture}[node distance=1.5cm]
+\node (Build) [process] {Build (kernel)};
+\node (Tick) [process, below of=Build] {Tick (agent)};
+\node (DRE) [process, below of=Tick]{Dynamic Resource Exchange (kernel) };
+\node (Tock) [process, below of=DRE]{Tock (agent)};
+\node (Decom) [process, below of=Tock] {Decommission (kernel)};
+
+\draw [arrow] (Build) -- (Tick); 
+\draw [arrow] (Tick) -- (DRE);
+\draw [arrow] (DRE) -- (Tock);
+\draw [arrow] (Tock) -- (Decom);
+\end{tikzpicture}
+}
+\caption{\Cyclus timestep execution steps.}
+\label{fig:time}
+\end{figure}
 
 The modularity of \Cyclus allows a low barrier of
 entry for developers, since developers can create an
 archetype (e.g. Reactor module, Reprocessing module)
 without extensive knowledge of the \Cyclus framework.
-
-
-\section{Methodology}
-
-The validation paper \cite{feng_standardized_2016}
-has comprehensive simulation parameters that allows
-us to reproduce the transition scenario in \Cyclus.
-In this
-study, we used the \Cycamore library to model
-all fuel cycle facilities. \Cycamore libraries contain
-simple fuel cycle facility models. For example,
-the Reactor module does depletion calculations through
-user-defined recipes.
-
-\Cyclus' default timestep is a month. However, for this
-study, since the verification paper mentions annual
-rates of material flow or processing, we change the \Cyclus
-simulation timestep to a year. This is done easily
-by changing the simulation parameter \texttt{dt} in the input file.
-
-\Cyclus outputs files in either \texttt{.sqlite} or
-\texttt{.h5} format. In this study, we used the 
-\texttt{.sqlite} format and analyzed the output file
-using a python script.
-
-The input file and analysis procedures are all in
-[zenodo].
-
-

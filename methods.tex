@@ -1,0 +1,51 @@
+\section{Methodology}
+
+The validation paper \cite{feng_standardized_2016}
+has comprehensive simulation parameters that allows
+us to reproduce the transition scenario in \Cyclus.
+In thisstudy, we used the \Cycamore \cite{huff_fundamental_2016}
+ archetype library to model
+all fuel cycle facilities. \Cycamore libraries contain
+simple fuel cycle facility models. For example,
+the Reactor module does depletion calculations through
+user-defined recipes.
+
+\Cyclus outputs files in either \texttt{.sqlite} or
+\texttt{.h5} format. In this study, we used the 
+\texttt{.sqlite} format and analyzed the output file
+using a python script.
+
+The input file and analysis procedures are all in
+[zenodo].
+
+\subsection{Fundamental Code Differences in \Cyclus}
+
+\Cyclus is different than some fuel cycle analysis codes
+used in the paper, which led to some differences in the result.
+
+\Cyclus' default timestep is a month. In order to take
+this into account, most results are post-processed
+to have an annual value (i.e. average value for
+inventory calculations and sum of 12 months for
+throughput calculations). The timestep in \Cyclus
+can be changed into a year without changing the input
+file, but \Cyclus' timestep execution \ref{fig:time} causes a delay
+in the material flow.
+
+\Cyclus, since it is an agent-based simulator, has discrete
+execution steps per timestep that might cause delays or contort
+the results from other simulators.
+
+The \Cycamore recipe reactor depletes half of its core when decommissioned,
+whereas the codes in the paper deplete all its fuel. This causes a major
+discrepancy for \gls{TRU} inventory and flux. For this study, the \Cycamore
+source code is changed to deplete all its assemblies to the depleted recipe.
+Also, the \Cycamore recipe reactor treats each batch (and assembly) as a discrete
+material, while some codes have continuous fuel discharge. This produces
+differences in the results because the batches in the paper are in fractions.
+
+Note that all the differences could have been mediated by changing the
+archetype source code. However, the only change made was the reactor
+depletion behavior at decommission due to its large impact. Note that this
+study is done to show current \Cyclus agreement with other codes and identify
+differences, not to alter \Cyclus to match the other codes.
