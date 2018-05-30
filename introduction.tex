@@ -29,7 +29,7 @@ validation studies necessary to gain
 confidence of the capability of the code as well as its
 agreement with other analysis codes.
 
-This study is done to benchmark \Cyclus' results
+This study benchmarkss \Cyclus' results
 against that of other well-known codes, such as
 DYMOND \cite{yacout_modeling_2005},
 VISION \cite{jacobson_verifiable_2010},
@@ -39,7 +39,7 @@ parameters and results from a validation study
 \cite{feng_standardized_2016} already done for the
 mentioned tools for a transition scenario from an
 open fuel cycle to an advanced fuel cycle with
-reprocessing. In the paper, the `model solutions'
+reprocessing. In the benchmark \cite{feng_standardized_2016}, the `model solutions'
 generated from an excel worksheet are compared
 with each code results, and the results show
 excellent agreement.
@@ -52,12 +52,12 @@ excellent agreement.
 that each reactor, reprocessing plant, and fuel fabrication plant is modeled as an agent.
 A \Cyclus simulation contains prototypes, which are fuel cycle facilities with
 pre-defined parameters, that are deployed in the simulation as \texttt{facility} agents.
-Encapsulating the \texttt{facility} agents are the \texttt{Institution} and \texttt{Region}.
-A \texttt{Region} agent holds a set of \texttt{Institution}s.
-An \texttt{Institution} agent can deploy or decommission \texttt{facility} agents.
-The \texttt{Institution} agent is part of a \texttt{Region} agent,
-which can contain multiple \texttt{Institution} agents. Several versions of \texttt{Institution}
-and \texttt{Region} exist, varying in complexity and functions \cite{huff_extensions_2014}.
+Encapsulating the \texttt{facility} agents are the \texttt{institution} and \texttt{region}.
+A \texttt{region} agent holds a set of \texttt{institution}s.
+An \texttt{institution} agent can deploy or decommission \texttt{facility} agents.
+The \texttt{institution} agent is part of a \texttt{region} agent,
+which can contain multiple \texttt{institution} agents. Several versions of \texttt{Institution}
+and \texttt{region} exist, varying in complexity and functions \cite{huff_extensions_2014}.
  \texttt{DeployInst} is used as the institution archetype for this work, where the institution
 deploys agents at user-defined timesteps.
 
@@ -67,7 +67,7 @@ with one another. A market-like mechanism called the dynamic resource exchange
 \cite{gidden_agent-based_2015} governs the exchanges.
 Each material resource has a quantity, composition, name, and a unique identifier
 for output analysis. The timestep execution in \Cyclus follows 
-\texttt{Build, Tick, \gls{DRE}, Tock, and Decommission}, as illustrated in
+\texttt{Build, Tick,} \gls{DRE}, \texttt{Tock, and Decommission}, as illustrated in
 figure \ref{fig:time}. The \texttt{Tick}, and \texttt{Tock} phases are for
 each agent to perform actions, such as transmutation, separation, generation,
 of materials before and after the market exchange phase. 

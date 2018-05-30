@@ -1,10 +1,10 @@
 
 \section{Fundamental Code Differences in \Cyclus}
 
-\Cyclus is different than some fuel cycle analysis codes
-used in the paper, which led to some differences in the result.
+\Cyclus has fundamental code differences than some fuel cycle analysis codes
+used in the benchmark \cite{feng_standardized_2016}.
 
-\Cyclus' default timestep is a month. In order to take
+\Cyclus' has a default timestep of a month. In order to take
 this into account, most results are post-processed
 to have an annual value (i.e. average value for
 inventory calculations and sum of 12 months for
@@ -22,15 +22,15 @@ facilities occur at the end of a timestep, while building of facilities
 occur at the beginning of a timestep.
 
 The \Cycamore recipe reactor depletes half of its core when decommissioned,
-whereas the codes in the paper deplete all its fuel when decommissioned. This causes a major
-discrepancy for \gls{TRU} inventory and flux. For this study, the \Cycamore
-source code is changed to deplete all its assemblies to the depleted recipe.
+whereas the codes in the benchmark \cite{feng_standardized_2016} deplete all its fuel when decommissioned. This causes a major
+discrepancy for \gls{TRU} inventory and flux. For this study, we changed
+the \Cycamore source code to deplete all its assemblies to the depleted recipe.
 Also, the \Cycamore recipe reactor treats each batch (and assembly) as a discrete
 material, while some codes have continuous fuel discharge. This produces
-differences in the results because the batches in the paper are in fractions.
+differences in the results because the batches in the benchmark \cite{feng_standardized_2016} are in fractions.
 In this study, the \gls{LWR} batch size and cycle time is increased, while
-decreasing the batch number to keep the core size constant. The \gls{SFR} batch
-number is simply rounded up, while the batch size and cycle time are kept constant.
+decreasing the batch number to keep the core size constant. We simply round
+up the \gls{SFR} batch number, while the batch size and cycle time are kept constant.
 This increases the core size by $1.08 \%$, which is negligible, but will be
 discussed in the results section.
 The differences are listed in table \ref{tab:diff}.
@@ -41,7 +41,7 @@ The differences are listed in table \ref{tab:diff}.
     \caption{Difference in Batch number and core size}
 \begin{tabularx}{0.47\textwidth}{bss}
         \hline
-        \textbf{Category} & \textbf{Paper \cite{feng_standardized_2016}} & \textbf{This study} \\
+        \textbf{Category} & \textbf{Benchmark \cite{feng_standardized_2016}} & \textbf{This study} \\
         \hline
         LWR Batches & 4.5 & 3 \\
         LWR Batch size [tHM] & 19.91 & 29.86 \\
@@ -57,6 +57,7 @@ The differences are listed in table \ref{tab:diff}.
 
 Note that all the differences could have been mediated by changing the
 archetype source codes. However, the only change made was the reactor
-depletion behavior at decommission due to its large impact. Note that this
-study is done to show current \Cyclus agreement with other codes and identify
+depletion behavior at decommission due to its large impact. Note that the
+goal of this
+study is to show current \Cyclus agreement with other codes and identify
 differences, not to alter \Cyclus to match the other codes.
