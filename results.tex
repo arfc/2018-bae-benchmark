@@ -6,10 +6,6 @@ simply a reproduction of the plots displayed in the paper. The excel
 results are obtained by personal contact with the paper author
 Bo Feng at Argonne National Laboratory.
 
-Most results from \Cyclus show excellent agreement. Differences in results
-stem from the errors associated with averaging and the concept of what
-constitutes a `snapshot' of a facility inventory.
-
 The deployed reactor capacity is shown in figure \ref{fig:pow_plot}.
 The \gls{LWR} retirement and \gls{SFR} deployment timeseries are shown
 in figure \ref{fig:dep}. The two plots show exact agreement with the
@@ -98,9 +94,9 @@ size.
 
 Similar results are shown in figure \ref{fig:waiting} for the inventory of discharge fuel cooled and waiting
 for reprocessing. Non-aggregated monthly values are shown in figure \ref{fig:waiting_monthly}.
-However, note that the oscillation peaks meet with the excel
+Unlike the previous plot, however, the oscillation peaks meet with the excel
 solution.  This is because cooled inventory is measured by the cumulative sum
-of fuel that has been cooled minus the fuel reprocessed at that timestep.
+of fuel that has been cooled subtracted by the fuel reprocessed at that timestep.
 The cooled inventory before the fuel are sent to reprocessing, which correspond
 to the peaks in the oscillation, are the cooled inventory defined by the paper.
 
