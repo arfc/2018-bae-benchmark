@@ -15,19 +15,8 @@ MARKAL \cite{shay_2006_epa}. The study reveals
 that \Cyclus' results match the spreadsheet results
 very closely, with a minor difference with regard to
 reprocessing \gls{UNF}. This difference is most
-likely caused by two factors. First, the timestep execution of \Cyclus causes delays in material
-flow, since a material can move through one
-facility at a timestep. Second, the buffers in
-\Cyclus facilities causes difficulties when
-analyzing time-dependent material flow.
-However, the differences can be lessened with
-iterations to the input file and possibly the
-source code. Since \Cyclus is a modular code,
-a facility module can be modified and used in
-the simulation without changing the entire framework.
-
-
-
+likely caused by two factors:
+[GOOD WAY TO EXPLAIN]
 
 \section{Introduction}
 Fuel cycle simulators act as an important tool to
@@ -52,7 +41,10 @@ parameters and results from a validation study
 \cite{feng_standardized_2016} already done for the
 mentioned tools for a transition scenario from an
 open fuel cycle to an advanced fuel cycle with
-reprocessing.
+reprocessing. In the paper, the `model solutions'
+generated from an excel worksheet are compared
+with each code results, and the results show
+excellent agreement.
 
 
 \subsection{\Cyclus}
@@ -78,7 +70,9 @@ with one another. A market-like mechanism called the dynamic resource exchange
 Each material resource has a quantity, composition, name, and a unique identifier
 for output analysis. The timestep execution in \Cyclus follows 
 \texttt{Build, Tick, \gls{DRE}, Tock, and Decommission}, as illustrated in
-figure \ref{fig:time}.
+figure \ref{fig:time}. The \texttt{Tick}, and \texttt{Tock} phases are for
+each agent to perform actions, such as transmutation, separation, generation,
+of materials before and after the market exchange phase. 
 
 \begin{figure}[h]
 \centering
