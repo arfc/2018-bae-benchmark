@@ -1,2 +1,2 @@
-# europe_nuclear_paper
-tracks the nuclear history of EU countries
+# Benchmark_Cyclus
+Cyclus benchmark in transition scenarios
