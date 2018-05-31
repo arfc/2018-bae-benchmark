@@ -1,16 +1,16 @@
 \section{Results}
 
-Each \Cyclus result is shown as a solid line, and the excel solution in the
-benchmark \cite{feng_standardized_2016} is shown as a dotted line for visualization. The results are
-simply a reproduction of the plots displayed in the benchmark \cite{feng_standardized_2016}. The excel
-results are obtained by personal contact with the benchmark \cite{feng_standardized_2016} first author
-Bo Feng at Argonne National Laboratory.
+We represent each \Cyclus result as a solid line, and the benchmark solution
+as a dotted line for visualization. The results are
+simply a reproduction of the plots displayed in the benchmark. 
+We obtained the benchmark solutions through personal contact with
+benchmark paper's author Bo Feng at Argonne National Laboratory.
 
 
-Figure \ref{fig:pow_plot} shows the deployed reactor capacity.
-The \gls{LWR} retirement and \gls{SFR} deployment timeseries are shown
-in figure \ref{fig:dep}. The two plots show exact agreement with the
-excel solutions from the benchmark \cite{feng_standardized_2016}.
+Figure \ref{fig:pow_plot} shows the deployed reactor capacity, and
+figure \ref{fig:dep} shows the \gls{LWR} retirement and \gls{SFR}
+deployment timeseries. The two plots show exact agreement with the
+benchmark solutions.
 
 \begin{figure}[htbp!]
 	\begin{center}
@@ -30,8 +30,7 @@ excel solutions from the benchmark \cite{feng_standardized_2016}.
 	\label{fig:dep}
 \end{figure}
 
-
-The annual fuel loading rates are shown in table \ref{fig:fuel_load}.
+Figure \ref{fig:fuel_load} shows the annual fuel loading rate.
 The initial fuel loading for 100 \gls{LWR} reactors were edited to match
 the plot in the verification
 study results. Note the oscillations for the \gls{LWR} fuel loading
@@ -39,8 +38,8 @@ is caused by the refueling period being 18-month refuel cycle for all \gls{LWR} 
 aggregated into 12-month groups. Note also that the total values
 are equal for both plots.
 
-Although indistinguishable,
-there is a small difference with \gls{SFR} fuel loading, proportional
+Although indistinguishable in figure \ref{fig:fuel_load},
+there is a small difference with \gls{SFR} fuel loading proportional
 to the core mass difference, as mentioned in the previous section.
 Figure \ref{fig:fuel_load_diff_norm} shows the
 differences normalized by the core mass differences, overlapped with the
@@ -57,29 +56,29 @@ deployment due to the difference in core mass.
 \end{figure}
 
 Figure \ref{fig:fuel_discharge_monthly} shows the inventory of discharged
-\gls{UNF} in mandatory cooling stage. It also oscillates between the excel 
+\gls{UNF} in mandatory cooling stage. It also oscillates between the benchmarks
 solution,and converges, caused by the influx and the outflux of \gls{UNF}
 into and out of the storage facility.
 Note that for most plots the \gls{SFR} inventory and fuel loading
-exactly matches the excel solutions, minus the small difference due to core
+exactly matches the benchmark solutions, minus the small difference due to core
 size.
 
 \begin{figure}[htbp!]
     \begin{center}
         \includegraphics[scale=0.5]{./images/results_18/fuel_load_diff_norm.png}
     \end{center}
-        \caption{Difference of annual fresh fuel loading rates (Cyclus - Excel) normalized by the core mass difference of an \gls{SFR} due to fractional batch size.}
+        \caption{Difference of annual fresh \gls{SFR} fuel loading rates (Cyclus - Benchmark) normalized by the core mass difference of an \gls{SFR} due to fractional batch size.}
     \label{fig:fuel_load_diff_norm}
 \end{figure}
 
 
-Similar results are shown in figure \ref{fig:waiting_monthly} for the inventory of discharge fuel cooled and waiting
-for reprocessing.
-Unlike the previous plot, however, the oscillation peaks meet with the excel
-solution.  This is because cooled inventory is measured by the cumulative sum
-of fuel that has been cooled subtracted by the fuel reprocessed at that timestep.
-The cooled inventory before the fuel are sent to reprocessing, which correspond
-to the peaks in the oscillation, are the cooled inventory defined by the benchmark \cite{feng_standardized_2016}.
+Figure \ref{fig:waiting_monthly} shows similar results for the inventory of cooled
+\gls{UNF} waiting for reprocessing.
+Unlike the previous plot, however, the oscillation peaks meet with the benchmark
+solution.  This is because the cooled \gls{UNF} inventory is measured by the cumulative sum
+of \gls{UNF} that has been cooled subtracted by the \gls{UNF} reprocessed at that timestep.
+Thus, the peaks in the oscillation correspond to the cooled inventory in the storage
+facility before it sends its inventory to reprocessing.
 
 \begin{figure}[htbp!]
     \begin{center}
@@ -100,8 +99,8 @@ to the peaks in the oscillation, are the cooled inventory defined by the benchma
 
 
 Figure \ref{fig:rep} shows the reprocessing throughput, which also oscillates between
-the excel solution. Note that no oscillation exists in the beginning because the
-\gls{LWR} reprocessing plant throughput is maximized at 2,000 tons per year.
+the benchmark solution. Note that no oscillation exists in the beginning because the
+\gls{LWR} \gls{UNF} reprocessing plant throughput is maximized at 2,000 tons per year.
 
 \begin{figure}[htbp!]
     \begin{center}
@@ -113,7 +112,7 @@ the excel solution. Note that no oscillation exists in the beginning because the
 
 
 Figure \ref{fig:tru} shows the inventory of unused \gls{TRU} recovered from \gls{UNF}.
-The \Cyclus results follows the excel solutions closely. However, the difference
+The \Cyclus results follows the benchmark solutions closely. However, the difference
 in core size causes \Cyclus results to be smaller, since more \gls{TRU} is used to
 start up the newly deployed \glspl{SFR}. The difference decreases as the
 \glspl{SFR} decommission, discharging more \gls{UNF} (thus \gls{TRU}) than

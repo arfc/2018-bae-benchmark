@@ -4,11 +4,10 @@
 \Cyclus has fundamental code differences than some fuel cycle analysis codes
 used in the benchmark \cite{feng_standardized_2016}.
 
-\Cyclus' has a default timestep of a month. In order to take
-this into account, most results are post-processed
-to have an annual value (i.e. average value for
-inventory calculations and sum of 12 months for
-throughput calculations). The timestep in \Cyclus
+\Cyclus has a default timestep of a month. In order to take
+this into account, we calculate the annual value
+(i.e. average value for inventory values and sum of 12 months
+for throughput values) for each result. The timestep in \Cyclus
 can be changed into a year without changing the source
 code, but \Cyclus' timestep execution (figure \ref{fig:time}) causes a delay
 in the material flow. Thus, having the timestep be 12 months
@@ -23,7 +22,7 @@ occur at the beginning of a timestep.
 
 The \Cycamore recipe reactor depletes half of its core when decommissioned,
 whereas the codes in the benchmark \cite{feng_standardized_2016} deplete all its fuel when decommissioned. This causes a major
-discrepancy for \gls{TRU} inventory and flux. For this study, we changed
+discrepancy for \gls{TRU} inventory. For this study, we changed
 the \Cycamore source code to deplete all its assemblies to the depleted recipe.
 Also, the \Cycamore recipe reactor treats each batch (and assembly) as a discrete
 material, while some codes have continuous fuel discharge. This produces
@@ -33,8 +32,7 @@ decreasing the batch number to keep the core size constant. We simply round
 up the \gls{SFR} batch number, while the batch size and cycle time are kept constant.
 This increases the core size by $1.08 \%$, which is negligible, but will be
 discussed in the results section.
-The differences are listed in table \ref{tab:diff}.
-
+We list the differences in table \ref{tab:diff}.
 
 \begin{table}[h]
     \centering
