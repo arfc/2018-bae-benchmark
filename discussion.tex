@@ -1,0 +1,22 @@
+\section{Discussion}
+
+We benchmarked \Cyclus, the agent-based
+fuel cycle simulator with results from another
+verification study and saw good agreement
+in a transition scenario.
+
+Throughout this work, two major differences were identified
+that led to the deviation
+of \Cyclus results to that of the excel sheet. First,
+the \Cycamore reactor depletes only half of its core
+when decommissioned. Second, \Cyclus, unlike other
+codes examined in the benchmark (except ORION), only has
+discrete batches for fuel discharge.
+We change the first issue by changing one line in the source code.
+However, we did not change the
+second issue intentionally to show that the final results
+still match the benchmark solutions.
+
+This study proves \Cyclus as a capable tool for modeling
+fuel cycle transition scenarios, and shows promise for
+expansion and future development.
