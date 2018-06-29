@@ -2,51 +2,28 @@
 
 \journal{Annals of Nuclear Energy}
 %%%% packages and definitions (optional)
-\usepackage{graphicx} % allows inclusion of graphics
-\usepackage{graphics}
-\usepackage{placeins}
-\usepackage{booktabs} % nice rules (thick lines) for tables
-\usepackage{microtype} % improves typography for PDF
-\usepackage{xspace}
-\usepackage[hidelinks]{hyperref}
-\usepackage{xspace}
-\usepackage{hhline}
+\newcommand{\Cyclus}{\textsc{Cyclus}\xspace}%
+\newcommand{\Cycamore}{\textsc{Cycamore}\xspace}
 
 \usepackage{tabularx}
+\usepackage[acronym,toc]{glossaries}
+\include{acros}
+\makeglossaries
+\usepackage{xspace}
+
 \usepackage{caption}
 \newcolumntype{b}{X}
 \newcolumntype{s}{>{\hsize=.5\hsize}X}
 \newcolumntype{m}{>{\hsize=.75\hsize}X}
 
-\captionsetup{justification=centering}
-\newcommand{\SN}{S$_N$}
-\renewcommand{\vec}[1]{\bm{#1}} %vector is bold italic
-\newcommand{\vd}{\bm{\cdot}} % slightly bold vector dot
-\newcommand{\grad}{\vec{\nabla}} % gradient
-\newcommand{\ud}{\mathop{}\!\mathrm{d}} % upright derivative symbol
-\newcommand{\Cyclus}{\textsc{Cyclus}\xspace}%
-\newcommand{\Cycamore}{\textsc{Cycamore}\xspace}%
-\graphicspath{ {images/} }
-\usepackage[affil-it]{authblk}
-\usepackage{tikz}
 
+
+\usepackage{tikz}
 \usetikzlibrary{shapes.geometric,arrows}
 \tikzstyle{process} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=blue!30]
 \tikzstyle{object} = [ellipse, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=green!30]
 \tikzstyle{arrow} = [thick,->,>=stealth]
-\usetikzlibrary{positioning, arrows, decorations, shapes }
-\usepackage{cleveref}
-
-
-\usepackage[acronym,toc]{glossaries}
-\include{acros}
-	
-\makeglossaries
-
-\date{}
-\setcounter{Maxaffil}{0}
-\renewcommand\Affilfont{\itshape\small}
-%%%%%%%%%%%%%%actual words%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\usetikzlibrary{positioning, arrows, decorations, shapes }%
 
 
 \begin{document}
@@ -54,13 +31,8 @@
 
 \title{Benchmark of Cyclus Fuel Cycle Simulation Tool in Transition Scenario}
 \author{Jin Whan Bae$^{1}$, Joshua L. Peterson-Droogh$^{2}$, Kathryn Huff$^{1}$}
-\address{}
+\address{$^{1}$Dept. of Nuclear, Plasma, and Radiological Engineering, University of Illinois at Urbana-Champaign, Urbana, IL \\ $^{2}$Oak Ridge National Laboratory, Oak Ridge, TN }
 
-\institute{
-$^{1}$Dept. of Nuclear, Plasma, and Radiological Engineering, University of Illinois at Urbana-Champaign, Urbana, IL
-\and
-$^{2}$Oak Ridge National Laboratory, Oak Ridge, TN  
-}
 \begin{abstract}
 Numerous nuclear fuel cycle system modeling codes
 have been developed to perform fuel cycle transition
@@ -79,12 +51,6 @@ that \Cyclus' results match the spreadsheet results
 closely, with minor differences caused by
 reactor module behavior.
 \end{abstract}
-
-
-
-\begin{keyword}
-\texttt{Fuel Cycle Simulations}, \texttt{Validation Study}
-\end{keyword}
 
 \end{frontmatter}
 
