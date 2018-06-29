@@ -1,5 +1,6 @@
-\documentclass{anstrans}
+\documentclass{elsarticle}
 
+\journal{Annals of Nuclear Energy}
 %%%% packages and definitions (optional)
 \usepackage{graphicx} % allows inclusion of graphics
 \usepackage{graphics}
@@ -42,15 +43,6 @@
 	
 \makeglossaries
 
-\title{Benchmark of Cyclus Fuel Cycle Simulation Tool in Transition Scenario}
-\author{Jin Whan Bae$^{1}$, Joshua L. Peterson-Droogh$^{2}$, Kathryn Huff$^{1}$}
-
-\institute{
-$^{1}$Dept. of Nuclear, Plasma, and Radiological Engineering, University of Illinois at Urbana-Champaign, Urbana, IL
-\and
-$^{2}$Oak Ridge National Laboratory, Oak Ridge, TN  
-}
-
 \date{}
 \setcounter{Maxaffil}{0}
 \renewcommand\Affilfont{\itshape\small}
@@ -58,6 +50,44 @@ $^{2}$Oak Ridge National Laboratory, Oak Ridge, TN
 
 
 \begin{document}
+\begin{frontmatter}
+
+\title{Benchmark of Cyclus Fuel Cycle Simulation Tool in Transition Scenario}
+\author{Jin Whan Bae$^{1}$, Joshua L. Peterson-Droogh$^{2}$, Kathryn Huff$^{1}$}
+\address{}
+
+\institute{
+$^{1}$Dept. of Nuclear, Plasma, and Radiological Engineering, University of Illinois at Urbana-Champaign, Urbana, IL
+\and
+$^{2}$Oak Ridge National Laboratory, Oak Ridge, TN  
+}
+\begin{abstract}
+Numerous nuclear fuel cycle system modeling codes
+have been developed to perform fuel cycle transition
+analyses from a once-through cycle to an advanced
+fuel cycle. Verification studies compare different
+fuel cycle analysis tools against each other to
+test agreement and identify sources of difference.
+This paper benchmarks \Cyclus, the agent-based,
+open-source fuel cycle simulation code, against
+a verification study \cite{feng_standardized_2016} for
+DYMOND \cite{yacout_modeling_2005},
+VISION \cite{jacobson_verifiable_2010},
+ORION \cite{gregg_analysis_2012}, and
+MARKAL \cite{shay_epa_2006}. The study reveals
+that \Cyclus' results match the spreadsheet results
+closely, with minor differences caused by
+reactor module behavior.
+\end{abstract}
+
+
+
+\begin{keyword}
+\texttt{Fuel Cycle Simulations}, \texttt{Validation Study}
+\end{keyword}
+
+\end{frontmatter}
+
 	
 \input{introduction}
 \input{methods}
@@ -66,7 +96,7 @@ $^{2}$Oak Ridge National Laboratory, Oak Ridge, TN
 \input{discussion}
 \input{acks}
 
-\bibliographystyle{abbrv}
+\bibliographystyle{elsarticle-num}
 \bibliography{bibliography}
 
 
