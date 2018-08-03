@@ -1,16 +1,27 @@
 
 \section{Introduction}
-Fuel cycle simulators act as an crucial tool to
-aid decision in policy and fuel cycle strategies.
-To meet this need from various institutions, a
-multitude of fuel cycle simulators were developed,
+Fuel cycle simulators guide and inform \gls{NFC} research directions and policy choices.
+Various institutions have developed fuel cycle simulators targeted at their unique needs,
 using different methods and different structures
 to simulate the material flow in the nuclear fuel cycle.
-The difference in the algorithm of fuel cycle analysis
-codes combined with a small user community make
-validation studies necessary to gain
-confidence of the capability of the code as well as its
-agreement with other analysis codes.
+Algorithmic differences make
+validation studies necessary to establish
+confidence in software capabilities and
+agreement among analysis tools.
+
+
+####### NOT SURE############
+A previous validation study \cite{feng_standardized_2016} compared
+four well-known \gls{NFC} simulation codes
+DYMOND \cite{yacout_modeling_2005},
+VISION \cite{jacobson_verifiable_2010},
+ORION \cite{gregg_analysis_2012}, and
+MARKAL \cite{shay_epa_2006}. The results from each code
+were compared to a set of `model solutions' that were generated
+from an excel worksheet for different metrics (e.g. fuel loading in reactor,
+\gls{UNF} inventory) in a transition scenario, and showed excellent agreement.
+We take the input parameters from the validation study \cite{feng_stnadardized_2016}
+
 
 This study benchmarks \Cyclus' results
 against that of other well-known codes, such as
@@ -26,57 +37,21 @@ reprocessing. In the benchmark \cite{feng_standardized_2016}, the `model solutio
 generated from an excel worksheet are compared
 to each code results, and the results show
 excellent agreement.
-
+####### NOT SURE############
 
 
 \subsection{\Cyclus}
 
 \Cyclus is an agent-based fuel cycle simulation framework 
 \cite{huff_fundamental_2016}, which means 
-that each reactor, reprocessing plant, and fuel fabrication plant is modeled as an agent.
-A \Cyclus simulation contains prototypes, which are fuel cycle facilities with
-pre-defined parameters, that are deployed in the simulation as \texttt{facility} agents.
-Encapsulating the \texttt{facility} agents are the \texttt{institution} and \texttt{region}.
+that each reactor, reprocessing plant, fuel fabrication plant, and other fuel cycle
+facility is modeled as a discrete entity.
+A \Cyclus simulation contains prototypes, fuel cycle facilities with
+pre-defined parameters, that are deployed as \texttt{facility} agents.
+\texttt{institution} and \texttt{region} agents manage the \texttt{facility} agents.
 A \texttt{region} agent holds a set of \texttt{institution}s.
 An \texttt{institution} agent can deploy or decommission \texttt{facility} agents.
-The \texttt{institution} agent is part of a \texttt{region} agent,
-which can contain multiple \texttt{institution} agents. Several versions of \texttt{Institution}
+Several versions of \texttt{Institution}
 and \texttt{region} exist, varying in complexity and functions \cite{huff_extensions_2014}.
  \texttt{DeployInst} is used as the institution archetype for this work, where the institution
 deploys agents at user-defined timesteps.
-
-At each timestep (one month),
-agents make requests for materials or bid to supply them and exchange
-with one another. A market-like mechanism called the dynamic resource exchange
-\cite{gidden_agent-based_2015} governs the exchanges.
-Each material resource has a quantity, composition, name, and a unique identifier
-for output analysis. The timestep execution in \Cyclus follows 
-\texttt{Build, Tick,} \gls{DRE}, \texttt{Tock, and Decommission}, as illustrated in
-figure \ref{fig:time}. The \texttt{Tick}, and \texttt{Tock} phases are for
-each agent to perform actions, such as transmutation, separation, or generation
-of materials before and after the market exchange phase.
-
-\begin{figure}[h]
-\centering
-\scalebox{0.7}{
-\begin{tikzpicture}[node distance=1.5cm]
-\node (Build) [process] {Build (kernel)};
-\node (Tick) [process, below of=Build] {Tick (agent)};
-\node (DRE) [process, below of=Tick]{Dynamic Resource Exchange (kernel) };
-\node (Tock) [process, below of=DRE]{Tock (agent)};
-\node (Decom) [process, below of=Tock] {Decommission (kernel)};
-
-\draw [arrow] (Build) -- (Tick); 
-\draw [arrow] (Tick) -- (DRE);
-\draw [arrow] (DRE) -- (Tock);
-\draw [arrow] (Tock) -- (Decom);
-\end{tikzpicture}
-}
-\caption{\Cyclus timestep execution steps.}
-\label{fig:time}
-\end{figure}
-
-The modularity of \Cyclus allows a low barrier of
-entry for developers, since developers can create an
-archetype (e.g. Reactor module, Reprocessing module)
-without extensive knowledge of the \Cyclus framework.
