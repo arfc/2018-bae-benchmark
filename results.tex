@@ -4,12 +4,12 @@ We represent each \Cyclus result as a solid line, and the benchmark solution
 as a dotted line for visualization. The results are
 simply a reproduction of the plots displayed in the benchmark. 
 We obtained the benchmark solutions through personal contact with
-benchmark paper's author Bo Feng at Argonne National Laboratory.
+benchmark author Bo Feng at Argonne National Laboratory.
 
 
 Figure \ref{fig:pow_plot} shows the deployed reactor capacity, and
 figure \ref{fig:dep} shows the \gls{LWR} retirement and \gls{SFR}
-deployment timeseries. The two plots show exact agreement with the
+deployment. The two plots show exact agreement with the
 benchmark solutions.
 
 \begin{figure}[htbp!]
@@ -34,12 +34,12 @@ Figure \ref{fig:fuel_load} shows the annual fuel loading rate.
 The initial fuel loading for 100 \gls{LWR} reactors were edited to match
 the plot in the verification
 study results. Note the oscillations for the \gls{LWR} fuel loading
-is caused by the refueling period being 18-month refuel cycle for all \gls{LWR} reactors
+are caused by the refueling period being 18-month refuel cycle for all \gls{LWR} reactors
 aggregated into 12-month groups. Note also that the total values
 are equal for both plots.
 
 Although indistinguishable in figure \ref{fig:fuel_load},
-there is a small difference with \gls{SFR} fuel loading proportional
+there is a small difference between \gls{SFR} fuel loading proportional
 to the core mass difference, as mentioned in the previous section.
 Figure \ref{fig:fuel_load_diff_norm} shows the
 differences normalized by the core mass differences, overlapped with the
@@ -56,11 +56,12 @@ deployment due to the difference in core mass.
 \end{figure}
 
 Figure \ref{fig:fuel_discharge_monthly} shows the inventory of discharged
-\gls{UNF} in mandatory cooling stage. It also oscillates between the benchmarks
-solution,and converges, caused by the influx and the outflux of \gls{UNF}
+\gls{UNF} in the mandatory cooling stage (four years for \gls{LWR}, one year for \gls{SFR}).
+It also oscillates between the benchmark's
+solution and converges, caused by the influx and the outflux of \gls{UNF}
 into and out of the storage facility.
-Note that for most plots the \gls{SFR} inventory and fuel loading
-exactly matches the benchmark solutions, minus the small difference due to core
+The \gls{SFR} inventory and fuel loading
+exactly matches the benchmark solutions, minus the small ($1.07\%$) difference due to core
 size.
 
 \begin{figure}[htbp!]
@@ -75,8 +76,8 @@ size.
 Figure \ref{fig:waiting_monthly} shows similar results for the inventory of cooled
 \gls{UNF} waiting for reprocessing.
 Unlike the previous plot, however, the oscillation peaks meet with the benchmark
-solution.  This is because the cooled \gls{UNF} inventory is measured by the cumulative sum
-of \gls{UNF} that has been cooled subtracted by the \gls{UNF} reprocessed at that timestep.
+solution.  This is because the cooled \gls{UNF} inventory is calculated by the cumulative sum
+of \gls{UNF} that has been cooled, subtracted by the quantity of \gls{UNF} reprocessed at that timestep.
 Thus, the peaks in the oscillation correspond to the cooled inventory in the storage
 facility before it sends its inventory to reprocessing.
 
@@ -98,9 +99,9 @@ facility before it sends its inventory to reprocessing.
 \end{figure}
 
 
-Figure \ref{fig:rep} shows the reprocessing throughput, which also oscillates between
-the benchmark solution. Note that no oscillation exists in the beginning because the
-\gls{LWR} \gls{UNF} reprocessing plant throughput is maximized at 2,000 tons per year.
+Figure \ref{fig:rep} shows the reprocessing throughput, which also oscillates around
+the benchmark solution. No oscillation exists in the beginning because the
+\gls{LWR} \gls{UNF} reprocessing plant throughput peaks at 2,000 tons per year.
 
 \begin{figure}[htbp!]
     \begin{center}
@@ -112,8 +113,9 @@ the benchmark solution. Note that no oscillation exists in the beginning because
 
 
 Figure \ref{fig:tru} shows the inventory of unused \gls{TRU} recovered from \gls{UNF}.
-The \Cyclus results follows the benchmark solutions closely. However, the difference
-in core size causes \Cyclus results to be smaller, since more \gls{TRU} is used to
+The \Cyclus results follow the benchmark solutions closely. However,
+the larger \gls{SFR} core size causes \Cyclus results to be smaller than the benchmark results,
+since more \gls{TRU} is used to
 start up the newly deployed \glspl{SFR}. The difference decreases as the
 \glspl{SFR} decommission, discharging more \gls{UNF} (thus \gls{TRU}) than
 the benchmark.

@@ -1,32 +1,24 @@
 
-\section{Fundamental Code Differences in \Cyclus}
+\section{Fundamental Modeling Differences in \Cyclus}
 
-\Cyclus has fundamental code differences than some fuel cycle analysis codes
+\Cyclus has fundamental code differences from some fuel cycle analysis codes
 used in the benchmark \cite{feng_standardized_2016}.
 
-\Cyclus has a default timestep of a month. In order to take
-this into account, we calculate the annual value
-(i.e. average value for inventory values and sum of 12 months
-for throughput values) for each result. The timestep in \Cyclus
-can be changed into a year without changing the source
-code, but \Cyclus' timestep execution (figure \ref{fig:time}) causes a delay
-in the material flow. Thus, having the timestep be 12 months
-allows the lessening of the impact of the delay due to the
-\Cyclus timestep execution.
-
-Similarly, \Cyclus has discrete
-execution steps per timestep that might cause delays or contort
-the results from other simulators. For example, decommissioning of
-facilities occur at the end of a timestep, while building of facilities
-occur at the beginning of a timestep.
+\Cyclus has a default timestep of a month.
+The benchmark is evaluated with annual resolution, so cumulative and annual averages
+were taken.
+For example, decommissioning of
+facilities occurs at the end of a timestep, while building of facilities
+occurs at the beginning of a timestep.
 
 The \Cycamore recipe reactor depletes half of its core when decommissioned,
-whereas the codes in the benchmark \cite{feng_standardized_2016} deplete all its fuel when decommissioned. This causes a major
-discrepancy for \gls{TRU} inventory. For this study, we changed
+whereas the codes in the benchmark \cite{feng_standardized_2016} deplete all their reactors' fuel when decommissioned.
+This causes a major
+discrepancy for the \gls{TRU} inventory. For this study, we changed
 the \Cycamore source code to deplete all its assemblies to the depleted recipe.
 Also, the \Cycamore recipe reactor treats each batch (and assembly) as a discrete
 material, while some codes have continuous fuel discharge. This produces
-differences in the results because the batches in the benchmark \cite{feng_standardized_2016} are in fractions.
+differences in the results because the batches in the benchmark \cite{feng_standardized_2016} are in time-averaged values.
 In this study, the \gls{LWR} batch size and cycle time is increased, while
 decreasing the batch number to keep the core size constant. We simply round
 up the \gls{SFR} batch number, while the batch size and cycle time are kept constant.

@@ -1,21 +1,18 @@
 \section{Methodology}
 
-The benchmark paper \cite{feng_standardized_2016}
-has comprehensive simulation parameters that allow
-reproduction of the transition scenario in \Cyclus.
+Feng et al. comprehensively defines simulation parameters
+sufficient to reproduce the transition scenario in \Cyclus.
 In this study, we used the \Cycamore \cite{huff_fundamental_2016}
  archetype library to model
 all fuel cycle facilities. \Cycamore libraries contain
-simple fuel cycle facility models. For example,
-the Reactor module does depletion calculations through
-user-defined recipes.
+simple fuel cycle facility models. 
 
 \Cyclus outputs files in either \texttt{.sqlite} or
 \texttt{.h5} format. In this study, we used the
 \texttt{.sqlite} format and analyzed the output file
-using a python script. After post-processing of the
+using a python script. After post-processing the
 output data, we overlap the results with the
-benchmark's solutions for comparison.The input file
+benchmark's solutions for comparison. The input file
 and analysis procedures are all in [zenodo].
 
 The analysis and benchmark is performed iteratively,
