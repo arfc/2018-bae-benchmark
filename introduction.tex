@@ -3,13 +3,13 @@
 Fuel cycle simulators guide and inform \gls{NFC} research directions and policy choices.
 Various institutions have developed fuel cycle simulators targeted at their unique needs,
 using different methods and different structures
-to simulate the material flow in the nuclear fuel cycle.
+to simulate the material flow in the \gls{NFC}.
 Algorithmic differences make
 validation studies necessary to establish
 confidence in software capabilities and
-agreement among analysis tools.
+agreement amongst analysis tools.
 
-A previous validation study \cite{feng_standardized_2016} compared
+A previous verification study \cite{feng_standardized_2016} compared
 four well-known \gls{NFC} simulation codes
 DYMOND \cite{yacout_modeling_2005},
 VISION \cite{jacobson_verifiable_2010},
@@ -45,7 +45,7 @@ that each reactor, reprocessing plant, fuel fabrication plant, and other fuel cy
 facility is modeled as a discrete entity.
 A \Cyclus simulation contains prototypes, fuel cycle facilities with
 pre-defined parameters, that are deployed as \texttt{facility} agents.
-\texttt{institution} and \texttt{region} agents manage the \texttt{facility} agents.
+\texttt{Institution} and \texttt{region} agents manage the \texttt{facility} agents.
 A \texttt{region} agent holds a set of \texttt{institution}s.
 An \texttt{institution} agent can deploy or decommission \texttt{facility} agents.
 Several versions of \texttt{Institution}
