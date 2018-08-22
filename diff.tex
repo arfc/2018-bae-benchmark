@@ -20,7 +20,7 @@ Also, the \Cycamore recipe reactor treats each batch (and assembly) as a discret
 material, while some codes have continuous fuel discharge. This produces
 differences in the results because the batches in the benchmark \cite{feng_standardized_2016} are in time-averaged values.
 In this study, the \gls{LWR} batch size and cycle time is increased, while
-decreasing the batch number to keep the core size constant. We simply round
+decreasing the batch number to keep the core size constant. We round
 up the \gls{SFR} batch number, while the batch size and cycle time are kept constant.
 This increases the core size by $1.08 \%$, which is negligible, but will be
 discussed in the results section.
@@ -45,7 +45,7 @@ The differences are listed in table \ref{tab:diff}.
         \label{tab:diff}
 \end {table}
 
-Note that all these differences could have been mediated by changing the
+Note that all these differences could have been resolved by changing the
 archetype source code. However, the only change made was the reactor
 depletion behavior at decommission due to its large impact on plutonium inventory.
 The goal of this
