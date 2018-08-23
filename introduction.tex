@@ -45,10 +45,10 @@ that each reactor, reprocessing plant, fuel fabrication plant, and other fuel cy
 facility is modeled as a discrete entity.
 A \Cyclus simulation contains prototypes, fuel cycle facilities with
 pre-defined parameters, that are deployed as \texttt{facility} agents.
-\texttt{Institution} and \texttt{region} agents manage the \texttt{facility} agents.
-A \texttt{region} agent holds a set of \texttt{institution}s.
-An \texttt{institution} agent can deploy or decommission \texttt{facility} agents.
+\texttt{Institution} and \texttt{Region} agents manage the \texttt{Facility} agents.
+A \texttt{region} agent holds a set of \texttt{Institution}s.
+An \texttt{Institution} agent can deploy or decommission \texttt{Facility} agents.
 Several versions of \texttt{Institution}
-and \texttt{region} exist, varying in complexity and functions \cite{huff_extensions_2014}.
- \texttt{DeployInst} is used as the institution archetype for this work, where the institution
-deploys agents at user-defined timesteps.
+and \texttt{Region} exist, varying in complexity and functions \cite{huff_extensions_2014}.
+ \texttt{DeployInst} is used as the \texttt{Institution} archetype for this work, where it
+deploys facilities at user-defined timesteps.

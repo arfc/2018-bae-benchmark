@@ -72,13 +72,11 @@ size.
 \end{figure}
 
 
-Figure \ref{fig:waiting_monthly} shows similar results for the inventory of cooled
-\gls{UNF} waiting for reprocessing.
-Unlike the previous plot however, the oscillation peaks meet with the benchmark
-solution.  This is because the cooled \gls{UNF} inventory is calculated by the cumulative sum
-of \gls{UNF} that has been cooled, subtracted by the quantity of \gls{UNF} reprocessed at that timestep.
-Thus, the peaks in the oscillation correspond to the cooled inventory in the storage
-facility before it sends its inventory for reprocessing.
+Figure \ref{fig:waiting_monthly} shows the amount of cooled \gls{UNF} waiting for
+reprocessing. The value is calculated by subtracting the cumulative difference between
+the cooled inventory and the \gls{UNF} reprocessing throughput.
+The oscillation is between the cooled inventory in the storage facility before (high)
+and after (low) it sends its inventory for reprocessing.
 
 \begin{figure}[htbp!]
     \begin{center}
