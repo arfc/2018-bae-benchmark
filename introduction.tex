@@ -10,31 +10,25 @@ confidence in software capabilities and
 agreement amongst analysis tools.
 
 A previous verification study \cite{feng_standardized_2016} compared
-four well-known \gls{NFC} simulation codes
+four well-known \gls{NFC} simulators
 DYMOND \cite{yacout_modeling_2005},
 VISION \cite{jacobson_verifiable_2010},
 ORION \cite{gregg_analysis_2012}, and
-MARKAL \cite{shay_epa_2006}. The results from each code
+MARKAL \cite{shay_epa_2006}. The results from each simulation tool
 were compared to a set of `model solutions' that were generated
 from an excel worksheet for different metrics (e.g. fuel loading in reactor,
 \gls{UNF} inventory) in a transition scenario, and showed excellent agreement
-with the result from the Feng et al \cite{feng_standardized_2016}.
+with the result from the Feng et. al \cite{feng_standardized_2016}.
 
-
-This study benchmarks \Cyclus' results
-against that of other well-known codes, such as
-DYMOND \cite{yacout_modeling_2005},
-VISION \cite{jacobson_verifiable_2010},
-ORION \cite{gregg_analysis_2012}, and
-MARKAL \cite{shay_epa_2006}. We take the input
-parameters and results from a validation study
-\cite{feng_standardized_2016} already done for the
-mentioned tools for a transition scenario from an
+The present work benchmarks the \Cyclus nuclear fuel cycle simulator 
+\cite{huff_fundamental_2014}
+against the verification study results from Feng et. al 
+\cite{feng_standardized_2016}.
+Using the scenario definitions established in that validation study,
+this work uses \Cyclus and its additional modules library, \Cycamore, to simulate the test case: a transition scenario from an
 open fuel cycle to an advanced fuel cycle with
-reprocessing. In the benchmark, they compare the `model solutions'
-generated from an excel worksheet
-to the results from each code, and the results show
-excellent agreement.
+reprocessing. We accordingly compared the Feng et. al `model solutions'
+to the \Cyclus and the results show excellent agreement.
 
 
 \subsection{\Cyclus}
