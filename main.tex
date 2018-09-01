@@ -1,10 +1,11 @@
-\documentclass{elsarticle}
+\documentclass[review]{elsarticle}
 
 \journal{Annals of Nuclear Energy}
 %%%% packages and definitions (optional)
 \newcommand{\Cyclus}{\textsc{Cyclus}\xspace}%
 \newcommand{\Cycamore}{\textsc{Cycamore}\xspace}
 
+\usepackage{lineno}
 \usepackage{tabularx}
 \usepackage[acronym,toc]{glossaries}
 \include{acros}
@@ -27,33 +28,18 @@
 
 
 \begin{document}
-\begin{frontmatter}
 
+\begin{frontmatter}
 \title{Standardized Verification of the Cyclus Fuel Cycle Simulator}
 \author{Jin Whan Bae$^{1}$, Joshua L. Peterson-Droogh$^{2}$, Kathryn D. Huff$^{1}$}
 \address{$^{1}$Dept. of Nuclear, Plasma, and Radiological Engineering, University of Illinois at Urbana-Champaign, Urbana, IL \\ $^{2}$Oak Ridge National Laboratory, Oak Ridge, TN }
 
-\begin{abstract}
-Many nuclear fuel cycle system modeling codes
-can analyze transition
-from a once-through to an advanced nuclear
-fuel cycle. Verification studies compare various
-fuel cycle analysis tools to
-test agreement and identify sources of difference.
-This paper benchmarks \Cyclus, the agent-based,
-open-source fuel cycle simulation code, against
-a verification study \cite{feng_standardized_2016} for
-DYMOND \cite{yacout_modeling_2005},
-VISION \cite{jacobson_verifiable_2010},
-ORION \cite{gregg_analysis_2012}, and
-MARKAL \cite{shay_epa_2006}. This study reveals
-that \Cyclus is in agreement with the results from the previous
-verification study, with minor differences caused by
-reactor module behavior.
-\end{abstract}
+\input{abs}
 
 \end{frontmatter}
 
+\modulolinenumbers[5]
+\linenumbers
 	
 \input{introduction}
 \input{methods}
