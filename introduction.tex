@@ -2,8 +2,8 @@
 \section{Introduction}
 Fuel cycle simulators guide and inform \gls{NFC} research directions and policy choices.
 Various institutions have developed fuel cycle simulators targeted at their unique needs,
-using different methods and different structures
-to simulate the material flow in the \gls{NFC}.
+using various methods and structures
+to simulate material flow in the \gls{NFC}.
 Algorithmic differences make
 validation studies necessary to establish
 confidence in software capabilities and
@@ -27,22 +27,21 @@ against the verification study results from Feng et. al
 Using the scenario definitions established in that validation study,
 this work uses \Cyclus and its additional modules library, \Cycamore, to simulate the test case: a transition scenario from an
 open fuel cycle to an advanced fuel cycle with
-reprocessing. We accordingly compared the Feng et. al `model solutions'
-to the \Cyclus and the results show excellent agreement.
+reprocessing. Comparison between these results and the Feng et. al `model solutions'
+show excellent agreement.
 
 
 \subsection{\Cyclus}
 
-\Cyclus is an agent-based fuel cycle simulation framework 
+\Cyclus is an \emph{agent-based} fuel cycle simulation framework 
 \cite{huff_fundamental_2016}, meaning 
 that each reactor, reprocessing plant, fuel fabrication plant, and other fuel cycle
 facility is modeled as a discrete entity.
 A \Cyclus simulation contains prototypes, fuel cycle facilities with
-pre-defined parameters, that are deployed as \texttt{facility} agents.
-\texttt{Institution} and \texttt{Region} agents manage the \texttt{Facility} agents.
-A \texttt{region} agent holds a set of \texttt{Institution}s.
-An \texttt{Institution} agent can deploy or decommission \texttt{Facility} agents.
-Several versions of \texttt{Institution}
-and \texttt{Region} exist, varying in complexity and functions \cite{huff_extensions_2014}.
- \texttt{DeployInst} is used as the \texttt{Institution} archetype for this work, where it
-deploys facilities at user-defined timesteps.
+pre-defined parameters, that are deployed as \texttt{Facility} agents.
+\texttt{Institution} agents in \Cyclus deploy or decommission \texttt{Facility} 
+agents which \texttt{Region} agents, in turn, manage the \texttt{Institution}s.
+The \Cycamore library contains customized \texttt{Facility}, 
+\texttt{Institution}, and \texttt{Region} models which vary in complexity and purpose \cite{huff_extensions_2014}.
+The \Cycamore \texttt{DeployInst} is used as the \texttt{Institution} archetype for this 
+ work, since it deploys facilities at user-defined timesteps.
