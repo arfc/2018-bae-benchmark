@@ -1,8 +1,8 @@
 
 \section{Fundamental Modeling Differences in \Cyclus}
 
-\Cyclus has fundamental code differences from the fuel cycle analysis codes
-used in the benchmark \cite{feng_standardized_2016}.
+\Cyclus has fundamental algorithmic differences from the fuel cycle analysis 
+tools used in the benchmark \cite{feng_standardized_2016}.
 
 \Cyclus has a default time step of a month.
 The verification study solutions are evaluated with 1-year time steps, so cumulative and annual averages
@@ -12,12 +12,12 @@ facilities occurs at the end of a timestep, and building of facilities
 occurs at the beginning of a timestep.
 
 The \Cycamore recipe reactor depletes half of its core when decommissioned,
-whereas the codes in the benchmark \cite{feng_standardized_2016} deplete all their reactors' fuel when decommissioned.
+whereas the software tools in the benchmark \cite{feng_standardized_2016} deplete all their reactors' fuel when decommissioned.
 This causes a major
 discrepancy for the \gls{TRU} inventory. For this study, we changed
 the \Cycamore source code to deplete all its assemblies to the depleted recipe.
 Also, the \Cycamore recipe reactor treats each batch (and assembly) as a discrete
-material, while some codes have continuous fuel discharge. This produces
+material, while some tools assume continuous fuel discharge. This produces
 differences in the results because the batches in the benchmark \cite{feng_standardized_2016} are in time-averaged values.
 In this study, the \gls{LWR} batch size and cycle time is increased, while
 decreasing the batch number to keep the core size constant. We round
@@ -49,5 +49,5 @@ Note that all these differences could have been resolved by changing the
 archetype source code. However, the only change made was the reactor
 depletion behavior at decommission due to its large impact on plutonium inventory.
 The goal of this
-study is to show current \Cyclus agreement with other codes and identify
-differences, not to alter \Cyclus to match the other codes.
+study is to show current \Cyclus agreement with other simulators and identify
+differences, not to alter \Cyclus to match the other tools.
