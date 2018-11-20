@@ -1,0 +1,305 @@
+%        File: revise.tex
+%     Created: Wed Oct 27 02:00 PM 2018 P
+% Last Change: Wed Oct 27 02:00 PM 2018 P
+%
+
+%
+% Copyright 2007, 2008, 2009 Elsevier Ltd
+%
+% This file is part of the 'Elsarticle Bundle'.
+% ---------------------------------------------
+%
+% It may be distributed under the conditions of the LaTeX Project Public
+% License, either version 1.2 of this license or (at your option) any
+% later version.  The latest version of this license is in
+%    http://www.latex-project.org/lppl.txt
+% and version 1.2 or later is part of all distributions of LaTeX
+% version 1999/12/01 or later.
+%
+% The list of all files belonging to the 'Elsarticle Bundle' is
+% given in the file `manifest.txt'.
+%
+
+% Template article for Elsevier's document class `elsarticle'
+% with numbered style bibliographic references
+% SP 2008/03/01
+%
+%
+%
+% $Id: elsarticle-template-num.tex 4 2009-10-24 08:22:58Z rishi $
+%
+%
+%\documentclass[preprint,12pt]{elsarticle}
+\documentclass[answers,11pt]{exam}
+
+% \documentclass[preprint,review,12pt]{elsarticle}
+
+% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+% for a journal layout:
+% \documentclass[final,1p,times]{elsarticle}
+% \documentclass[final,1p,times,twocolumn]{elsarticle}
+% \documentclass[final,3p,times]{elsarticle}
+% \documentclass[final,3p,times,twocolumn]{elsarticle}
+% \documentclass[final,5p,times]{elsarticle}
+% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+% if you use PostScript figures in your article
+% use the graphics package for simple commands
+% \usepackage{graphics}
+% or use the graphicx package for more complicated commands
+\usepackage{graphicx}
+% or use the epsfig package if you prefer to use the old commands
+% \usepackage{epsfig}
+
+% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+% The amsthm package provides extended theorem environments
+% \usepackage{amsthm}
+\usepackage{amsmath}
+
+% The lineno packages adds line numbers. Start line numbering with
+% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+% for the whole article with \linenumbers after \end{frontmatter}.
+\usepackage{lineno}
+
+% I like to be in control
+\usepackage{placeins}
+
+% natbib.sty is loaded by default. However, natbib options can be
+% provided with \biboptions{...} command. Following options are
+% valid:
+
+%   round  -  round parentheses are used (default)
+%   square -  square brackets are used   [option]
+%   curly  -  curly braces are used      {option}
+%   angle  -  angle brackets are used    <option>
+%   semicolon  -  multiple citations separated by semi-colon
+%   colon  - same as semicolon, an earlier confusion
+%   comma  -  separated by comma
+%   numbers-  selects numerical citations
+%   super  -  numerical citations as superscripts
+%   sort   -  sorts multiple citations according to order in ref. list
+%   sort&compress   -  like sort, but also compresses numerical citations
+%   compress - compresses without sorting
+%
+% \biboptions{comma,round}
+
+% \biboptions{}
+
+
+% Katy Huff addtions
+\usepackage{xspace}
+\usepackage{color}
+
+\usepackage{multirow}
+\usepackage[hyphens]{url}
+
+
+\usepackage[acronym,toc]{glossaries}
+\include{acros}
+
+\makeglossaries
+
+%\journal{Annals of Nuclear Energy}
+
+\begin{document}
+
+%\begin{frontmatter}
+
+% Title, authors and addresses
+
+% use the tnoteref command within \title for footnotes;
+% use the tnotetext command for the associated footnote;
+% use the fnref command within \author or \address for footnotes;
+% use the fntext command for the associated footnote;
+% use the corref command within \author for corresponding author footnotes;
+% use the cortext command for the associated footnote;
+% use the ead command for the email address,
+% and the form \ead[url] for the home page:
+%
+% \title{Title\tnoteref{label1}}
+% \tnotetext[label1]{}
+% \author{Name\corref{cor1}\fnref{label2}}
+% \ead{email address}
+% \ead[url]{home page}
+% \fntext[label2]{}
+% \cortext[cor1]{}
+% \address{Address\fnref{label3}}
+% \fntext[label3]{}
+
+
+\title{Standardized Verification of the Cyclus Fuel Cycle Simulator\\
+        \large Response to Review Comments}
+\author{Jin Whan Bae, Joshua L. Peterson-Droogh, Kathryn D. Huff}
+
+% use optional labels to link authors explicitly to addresses:
+% \author[label1,label2]{<author name>}
+% \address[label1]{<address>}
+% \address[label2]{<address>}
+
+
+%\author[uiuc]{Kathryn Huff}
+%        \ead{kdhuff@illinois.edu}
+%  \address[uiuc]{Department of Nuclear, Plasma, and Radiological Engineering,
+%        118 Talbot Laboratory, MC 234, Universicy of Illinois at
+%        Urbana-Champaign, Urbana, IL 61801}
+%
+% \end{frontmatter}
+\maketitle
+\section*{Review General Response}
+We would like to thank the reviewer for their prompt and detailed assessment of 
+this paper. Your comments have resulted in changes which certainly improved the 
+paper.
+
+
+\begin{questions}
+%---------------------------------------------------------------------
+\section*{Reviewer 1}
+
+        %---------------------------------------------------------------------
+        \question This is a valuable contribution because it adds results from 
+        Cyclus to an existing comparison.  Cyclus has growing importance in the 
+        fuel cycle community and such comparisons are important for 
+        establishing its role and credibility.  On the whole, this technical 
+        note is well put together and makes a strong case for Cyclus in the 
+        context of this particular scenario/transition.
+
+        \begin{solution}
+        <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question line 5: the word ``validation'' is used here, although 
+        everywhere else is described as ``verification''.  Strictly speaking, 
+        it may be neither, but (a) it is closer to verification and (b) a 
+        single term should be used throughout.
+
+        \begin{solution}
+        <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question line 11: ``excel'' should be capitalized and may need a 
+        trademark symbol
+
+        \begin{solution}
+        <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question line 27: strike ``the Institutions.'' (grammar) from the end 
+        of the sentence.
+
+        \begin{solution}
+        <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question lines 37/38: the description of file type and processing 
+        tools seems like unnecessary detail.  Maybe it is related to the 
+        statement about all the files being available on Zenodo, and thus 
+        openly available.  If so, this point could be made more strongly, 
+        possibly leading with the pointer to the open files/data, and then 
+        describing its contents.
+
+        \begin{solution}
+        <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question line 44: ``small edits in the source code'' - it may be worth 
+        mentioning here, already, that these are changes are only to the 
+        reactor archetype (even if more generic terminology is used)
+
+        \begin{solution}
+        <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question lines 60-63: It is not clear why this was necessary. 
+        Non-integer batches can simulated using the Cycamore reactor archetype 
+        by loading a core with objects that are smaller than a batch (but 
+        bigger than a real assembly for performance reasons).  In this problem, 
+        removing 2 ``assemblies'' each cycle from a core loaded with 9 
+        ``assemblies'' would achieve a 4.5 batch scheme.  If there was another 
+        reason for choosing this modeling different, that should be mentioned.
+
+        \begin{solution}
+        <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question end of section 3: There is merit in showing some summary of 
+        the input used in Cyclus to model this problem.  At the very least, a 
+        list of archetypes that were used and possibly a visualization of the 
+        network that those archetypes create.  For each archetype, it may be 
+        useful to comment on how straightforward the modeling choices were to 
+        implement this specific scenario in the framework of the available 
+        Cycamore archetypes.  You've given some detail for the reactor 
+        archetype - perhaps the others were simpler, and don't need a complete 
+        description, but there are often details in configuring the prototypes 
+        that can be illustrative to others.  Recognizing the balance of keeping 
+        this technical note brief, there may be room for a little more 
+        description of the Cyclus scenario beyond the reactor configuration.
+
+        \begin{solution}
+        <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question lines 79-81: Although it's not clear which Institution 
+        archetype was used (see above), in the simplest case (DeployInst), the 
+        reactor deployment information is input data and not the result of a 
+        calculation.  The commentary around Figure 1 could mention that this is 
+        a comparison of input data, showing that the scenarios are defined 
+        equivalently.  It is an important comparison, but not really to be 
+        interpreted as ``results''.
+
+        \begin{solution}
+        <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question line 88: It is not clear what Figure 4 is showing.  (1) An 
+        equation may be useful here to more clearly indicate how the 
+        normalization works. It is not clear why this kind of normalization 
+        doesn't give a uniform value of 1 if it's (delta fuel loading)/(delta 
+        core mass).  At the very least additional commentary should describe 
+        why/how ``This shows that the differences....''  (2) the figure's 
+        y-axis is labeled for the normalized quantity, but not for the SFR 
+        deployments - is that shown in ``number of reactors''?
+
+        \begin{solution}
+        <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question line 93: ``and converges'' - what is converging to what?  
+        Does it actually converge, or does the baseline become so small that 
+        the oscillations can't be distinguished?
+
+        \begin{solution}
+        <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question Figure 6: At least visually, the mean behavior over the 
+        oscillations does not appear consistent with the reference.  Is this 
+        the case? If so, comment.  If not, describe why it is not.
+
+        \begin{solution}
+        <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+\end{questions}
+\bibliographystyle{unsrt}
+\bibliography{review-responses}
+\end{document}
+
+  %
+  % End of file `elsarticle-template-num.tex'.
