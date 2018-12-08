@@ -1,0 +1,55 @@
+\documentclass[review]{elsarticle}
+
+\journal{Annals of Nuclear Energy}
+%%%% packages and definitions (optional)
+\newcommand{\Cyclus}{\textsc{Cyclus}\xspace}%
+\newcommand{\Cycamore}{\textsc{Cycamore}\xspace}
+
+\usepackage{lineno}
+\usepackage{tabularx}
+\usepackage[acronym,toc]{glossaries}
+\include{acros}
+\makeglossaries
+\usepackage{xspace}
+
+\usepackage{caption}
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+\newcolumntype{m}{>{\hsize=.75\hsize}X}
+
+
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,arrows}
+\tikzstyle{process} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=blue!30]
+\tikzstyle{object} = [ellipse, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\usetikzlibrary{positioning, arrows, decorations, shapes }%
+
+
+\begin{document}
+
+\begin{frontmatter}
+\title{Standardized Verification of the Cyclus Fuel Cycle Simulator}
+\author{Jin Whan Bae$^{1}$, Joshua L. Peterson-Droogh$^{2}$, Kathryn D. Huff$^{1}$}
+\address{$^{1}$Dept. of Nuclear, Plasma, and Radiological Engineering, University of Illinois at Urbana-Champaign, Urbana, IL \\ $^{2}$Oak Ridge National Laboratory, Oak Ridge, TN }
+
+\input{abs}
+
+\end{frontmatter}
+
+\modulolinenumbers[5]
+\linenumbers
+	
+\input{introduction}
+\input{methods}
+\input{diff}
+\input{results}
+\input{discussion}
+\input{acks}
+
+\bibliographystyle{elsarticle-num}
+\bibliography{bibliography}
+
+
+\end{document}

@@ -1,0 +1,53 @@
+
+\section{Fundamental Modeling Differences in \Cyclus}
+
+\Cyclus has fundamental algorithmic differences from the fuel cycle analysis 
+tools used in the benchmark \cite{feng_standardized_2016}.
+
+\Cyclus has a default time step of a month.
+The verification study solutions are evaluated with 1-year time steps, so cumulative and annual averages
+were used.
+For example, decommissioning of
+facilities occurs at the end of a timestep, and building of facilities
+occurs at the beginning of a timestep.
+
+The \Cycamore recipe reactor depletes half of its core when decommissioned,
+whereas the software tools in the benchmark \cite{feng_standardized_2016} deplete all their reactors' fuel when decommissioned.
+This causes a major
+discrepancy for the \gls{TRU} inventory. For this study, we changed
+the \Cycamore source code to deplete all its assemblies to the depleted recipe.
+Also, the \Cycamore recipe reactor treats each batch (and assembly) as a discrete
+material, while some tools assume continuous fuel discharge. This produces
+differences in the results because the batches in the benchmark \cite{feng_standardized_2016} are in time-averaged values.
+In this study, the \gls{LWR} batch size and cycle time is increased, while
+decreasing the batch number to keep the core size constant. We round
+up the \gls{SFR} batch number, while the batch size and cycle time are kept constant.
+This increases the core size by $1.08 \%$, which is negligible, but will be
+discussed in the results section.
+The differences are listed in table \ref{tab:diff}.
+
+\begin{table}[h]
+    \centering
+    \caption{Difference in Batch number and core size}
+\begin{tabularx}{\textwidth}{bss}
+        \hline
+        \textbf{Category} & \textbf{Model Solution \cite{feng_standardized_2016}} & \textbf{\Cyclus} \\
+        \hline
+        LWR Batches & 4.5 & 3 \\
+        LWR Batch size [tHM] & 19.91 & 29.86 \\
+        LWR Core size [tHM] & 89.59 & 89.59 \\
+        LWR Cycle time & 1 year & 1.5 years \\
+        SFR Batches & 3.96 & 4 \\
+        SFR Batch size [tHM] & 3.95 & 3.95 \\
+        SFR Core size [tHM] & 15.63 & 15.8 \\
+        \hline
+        \end{tabularx}
+        \label{tab:diff}
+\end {table}
+
+Note that all these differences could have been resolved by changing the
+archetype source code. However, the only change made was the reactor
+depletion behavior at decommission due to its large impact on plutonium inventory.
+The goal of this
+study is to show current \Cyclus agreement with other simulators and identify
+differences, not to alter \Cyclus to match the other tools.

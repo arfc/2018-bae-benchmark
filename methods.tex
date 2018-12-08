@@ -1,0 +1,25 @@
+\section{Methodology}
+
+Feng et al. comprehensively defines simulation parameters
+sufficient to reproduce the transition scenario in \Cyclus.
+In this study, we used the \Cycamore \cite{huff_fundamental_2016}
+ archetype library to model
+all fuel cycle facilities. \Cycamore libraries contain
+simple fuel cycle facility models. 
+
+\Cyclus results are output in either \texttt{.sqlite} or
+\texttt{.h5} format. In this study, we used the
+\texttt{.sqlite} format and analyzed the results
+using a python script. The post-processed
+output data, was overlapped with the results with the
+model solution from the verification study \cite{feng_standardized_2016}.
+The input file and analysis procedures are all in 
+\cite{bae_arfc/transition-scenarios:_2018}.
+The analysis and benchmark were performed iteratively,
+where we improve the original result by communicating
+with the authors of the benchmark. 
+We analyzed the reasons for the differences from the original
+result, and made small edits in the source code.
+Major differences in the facility behavior algorithms were not edited but
+simply explained in detail as to how they contributed
+to the difference in the results.
