@@ -6,12 +6,11 @@ simply a reproduction of the plots displayed in the benchmark.
 We obtained the benchmark solutions through personal contact with
 benchmark author Bo Feng at Argonne National Laboratory.
 
-
-
 Figure \ref{fig:pow_plot} shows the deployed reactor capacity, and
 figure \ref{fig:dep} shows the \gls{LWR} retirement and \gls{SFR}
-deployment. The two plots show exact agreement with the
-benchmark solutions.
+deployment. These figures are merely a comparison of
+input data, showing that the scenarios are defined equivalently for
+\Cyclus and the benchmark. 
 
 \begin{figure}[htbp!]
     \begin{center}
@@ -45,6 +44,11 @@ differences normalized by the core mass differences, overlapped with the
 \gls{SFR} deployment. This shows that the differences only occur during
 deployment due to the difference in core mass.
 
+\[ \frac{\Delta m_t}{\Delta M_{core}} = N_{t, SFR} \]
+\[ m_t = \text{SFR fuel loading at time t}  \]
+\[ \Delta m_t = m_{t,cyclus} - m_{t,spreadsheet} \]
+\[ \Delta M_{core} = M_{core, cyclus} - M_{core, spreadsheet} \]
+\[ N_{t, SFR} = \text{Number of SFRs deployed at time t}\]
 
 \begin{figure}[htbp!]
     \begin{center}
