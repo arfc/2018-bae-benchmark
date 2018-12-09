@@ -5,7 +5,7 @@ Various institutions have developed fuel cycle simulators targeted at their uniq
 using various methods and structures
 to simulate material flow in the \gls{NFC}.
 Algorithmic differences make
-validation studies necessary to establish
+verification studies necessary to establish
 confidence in software capabilities and
 agreement amongst analysis tools.
 
@@ -16,7 +16,7 @@ VISION \cite{jacobson_verifiable_2010},
 ORION \cite{gregg_analysis_2012}, and
 MARKAL \cite{shay_epa_2006}. The results from each simulation tool
 were compared to a set of `model solutions' that were generated
-from an excel worksheet for different metrics (e.g. fuel loading in reactor,
+from spreadsheet for different metrics (e.g. fuel loading in reactor,
 \gls{UNF} inventory) in a transition scenario, and showed excellent agreement
 with the result from the Feng et. al \cite{feng_standardized_2016}.
 
@@ -39,8 +39,9 @@ that each reactor, reprocessing plant, fuel fabrication plant, and other fuel cy
 facility is modeled as a discrete entity.
 A \Cyclus simulation contains prototypes, fuel cycle facilities with
 pre-defined parameters, that are deployed as \texttt{Facility} agents.
-\texttt{Institution} agents in \Cyclus deploy or decommission \texttt{Facility} 
-agents which \texttt{Region} agents, in turn, manage the \texttt{Institution}s.
+\texttt{Institution} agents in \Cyclus deploy or decommission \texttt{Facility} agents.
+\texttt{Region} agents, in turn, manage the \texttt{Institution}
+agents.
 The \Cycamore library contains customized \texttt{Facility}, 
 \texttt{Institution}, and \texttt{Region} models which vary in complexity and purpose \cite{huff_extensions_2014}.
 The \Cycamore \texttt{DeployInst} is used as the \texttt{Institution} archetype for this 
