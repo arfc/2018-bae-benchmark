@@ -12,16 +12,16 @@ openly available in \cite{bae_arfc/transition-scenarios:_2018}.
 \Cyclus results are output in either \texttt{.sqlite} or
 \texttt{.h5} format. In this study, we used the
 \texttt{.sqlite} format and analyzed the results
-using a python script. The post-processed
-output data was overlapped with the results with the
+using a python script. We then compared the post-processed
+output data to the results with the
 model solution from the verification study \cite{feng_standardized_2016}.
 
 The analysis and benchmark were performed iteratively,
 where we improve the original result by communicating
 with the authors of the benchmark. 
 We analyzed the reasons for the differences from the original
-result, and made small edit in the reactor depletion modeling behavior
-when the reactors are decommissioned.
-Major differences in the facility behavior algorithms were not edited but
-simply explained in detail as to how they contributed
-to the difference in the results.
+result. Only one adjustment to the default reactor depletion modeling behavior 
+was needed, regarding fuel handling upon reactor decommissioning.
+Major differences in the facility behavior algorithms did not require 
+adjustment. All model heuristics contributing to minor deviations from the 
+benchmark are explained in detail.
