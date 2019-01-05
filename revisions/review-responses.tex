@@ -254,7 +254,30 @@ paper.
         description of the Cyclus scenario beyond the reactor configuration.
 
         \begin{solution}
-                <++>
+                Excellent suggestion. We have added the following text:
+
+
+                This simulation used seven commonly used \Cycamore \texttt{Facility} archetypes
+(Source, Enrichment, Reactor, Separations, Mixer, Storage, and Sink), two
+\texttt{Insitution} archetypes (NullInst and DeployInst), and one
+\texttt{Region} archetype (NullRegion).
+The DeployInst was used to deploy Reactor facilities on
+schedule while NullInst managed all other fuel cycle facilities. All resided in
+the single, simple, NullRegion.
+
+Most of these facility archetypes were easily configured into agent prototypes
+using only a few variables. The Source was used to model a mine of natural
+uranium, while Sink facility protypes accepted waste streams of various kind
+(reprocessing waste, tails, etc.). The Enrichment facility archetype was
+similarly used to model uranium enrichment and is simple to configure. The
+Storage facility archetype was configured to model cooling times for the two
+types of fuel.
+
+More complex archetypee, the Separations and Mixer factility archetypes were
+configured to separate used fuel and fabricate it into new SFR fuel, conserving
+mass and modeling processing times. Additionally, the Reactor archetype was
+used for both reactor types, and the configurations for these are dicussed in later
+sections.
         \end{solution}
 
         %---------------------------------------------------------------------
