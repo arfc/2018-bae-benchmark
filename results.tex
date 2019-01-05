@@ -1,14 +1,13 @@
 \section{Results}
 
-We represent each \Cyclus result as a solid line, and the benchmark solution
-as a dotted line for visualization. The results are
-simply a reproduction of the plots displayed in the benchmark. 
-We obtained the benchmark solutions through personal contact with
-benchmark author Bo Feng at Argonne National Laboratory.
+In the comparison visualizations, we represent each \Cyclus result as a solid 
+line and each benchmark model solution as a dotted line. We obtained the benchmark 
+model solutions through personal contact with benchmark author Bo Feng at Argonne 
+National Laboratory.
 
 Figure \ref{fig:pow_plot} shows the deployed reactor capacity, and
 figure \ref{fig:dep} shows the \gls{LWR} retirement and \gls{SFR}
-deployment. These figures are merely a comparison of
+deployment. These figures are merely a comparison df
 input data, showing that the scenarios are defined equivalently for
 \Cyclus and the benchmark. 
 
@@ -30,25 +29,36 @@ input data, showing that the scenarios are defined equivalently for
 \end{figure}
 
 Figure \ref{fig:fuel_load} shows the annual fuel loading rate.
-The initial fuel loading for 100 \gls{LWR} reactors was edited to match
+The initial fuel loading for 100 \gls{LWR} reactors matches
 the plot in the verification
 study results. The oscillations caused by the 18 month refueling period
-were aggregated into 12 month groups. As a result the total fuel loaded
+were aggregated into 12 month groups. As a result, the total fuel loaded
 are equal for both plots.
 
-Although indistinguishable in figure \ref{fig:fuel_load},
-there is a small difference between \gls{SFR} fuel loading proportional
-to the core mass difference, as mentioned in the previous section.
+Although indistinguishable visibly in figure \ref{fig:fuel_load}, \gls{SFR} fuel 
+loading in the \Cyclus simulation differs by a small amount proportional
+to the core mass difference mentioned in the previous section, due to fractional 
+numbers of batches. Specifically:
+
+\begin{align*} 
+        \frac{\Delta m(t)}{\Delta M_{core}} & = N_{SFR}(t)\\ 
+        \intertext{where}
+        N_{SFR}(t) &= \text{Number of SFRs deployed at time t}\\
+        m(t) &= \text{SFR fuel loading at time t}  \\
+        \Delta m(t) &= m_{c}(t) - m_{b}(t)\\
+        m_c(t) &= \mbox{SFR fuel batch mass loaded (\Cyclus)}\\
+        m_b(t) &= \mbox{SFR fuel batch mass loaded (benchmark)}\\
+        \Delta M_{core} &= M_c - M_b \\
+        M_c &= \mbox{Total SFR core mass (\Cyclus)}\\ 
+                &= 15.8 [tHM]\\
+        M_b &= \mbox{Total SFR core mass (benchmark)}\\ 
+                &= 15.63 [tHM].
+\end{align*}
+
 Figure \ref{fig:fuel_load_diff_norm} shows the
-differences normalized by the core mass differences, overlapped with the
+differences normalized by the core mass differences, overlaid on the
 \gls{SFR} deployment. This shows that the differences only occur during
 deployment due to the difference in core mass.
-
-\[ \frac{\Delta m_t}{\Delta M_{core}} = N_{t, SFR} \]
-\[ m_t = \text{SFR fuel loading at time t}  \]
-\[ \Delta m_t = m_{t,cyclus} - m_{t,spreadsheet} \]
-\[ \Delta M_{core} = M_{core, cyclus} - M_{core, spreadsheet} \]
-\[ N_{t, SFR} = \text{Number of SFRs deployed at time t}\]
 
 \begin{figure}[htbp!]
     \begin{center}
@@ -57,15 +67,6 @@ deployment due to the difference in core mass.
         \caption{Annual fresh fuel loading rates (first cores and reload fuel).}
     \label{fig:fuel_load}
 \end{figure}
-
-Figure \ref{fig:fuel_discharge_monthly} shows the inventory of discharged
-\gls{UNF} in the mandatory cooling stage (four years for \gls{LWR}, one year for \gls{SFR}).
-It also oscillates between the benchmark's
-solution and converges, caused by the influx and the outflux of \gls{UNF}
-into and out of the storage facility.
-The \gls{SFR} inventory and fuel loading
-solutions exactly matches the benchmark solutions, minus the small ($1.07\%$) difference due to core
-size.
 
 \begin{figure}[htbp!]
     \begin{center}
@@ -76,11 +77,20 @@ size.
 \end{figure}
 
 
+Figure \ref{fig:fuel_discharge_monthly} shows the inventory of discharged
+\gls{UNF} in the mandatory cooling stage (four years for \gls{LWR}, one year for \gls{SFR}).
+It also oscillates between the benchmark's
+solution and converges, caused by the influx and the outflux of \gls{UNF}
+into and out of the storage facility.
+The \gls{SFR} inventory and fuel loading
+solutions exactly match the benchmark solutions, minus the small ($1.07\%$) difference due to core
+size.
+
 Figure \ref{fig:waiting_monthly} shows the amount of cooled \gls{UNF} waiting for
 reprocessing. The value is calculated by subtracting the cumulative difference between
 the cooled inventory and the \gls{UNF} reprocessing throughput.
-The oscillation is between the cooled inventory in the storage facility before (high)
-and after (low) it sends its inventory for reprocessing.
+The visible oscillation shows the inventory in the storage facility 
+before (high) and after (low) it sends that inventory for reprocessing.
 
 \begin{figure}[htbp!]
     \begin{center}

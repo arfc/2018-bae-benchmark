@@ -19,8 +19,13 @@ the \Cycamore source code to deplete all its assemblies to the depleted recipe.
 Also, the \Cycamore recipe reactor treats each batch (and assembly) as a discrete
 material, while some tools assume continuous fuel discharge. This produces
 differences in the results because the batches in the benchmark \cite{feng_standardized_2016} are in time-averaged values.
-In this study, the \gls{LWR} batch size and cycle time is increased, while
-decreasing the batch number to keep the core size constant. We round
+
+The benchmark unrealistically specifies fractional numbers of batches (4.5 and 
+3.96 for \glspl{LWR} and \glspl{SFR} respectively) to 
+accomodate software that operates on integer year timescales. \Cyclus is 
+capable of more refined time resolution and accepts only integer 
+numbers of batches, to better match the real world. Accordingly, the \gls{LWR} batch size, number of batches, and cycle time 
+were adjusted to remain true to the benchmark specified core size. We rounded
 up the \gls{SFR} batch number, while the batch size and cycle time are kept constant.
 This increases the core size by $1.08 \%$, which is negligible, but will be
 discussed in the results section.
@@ -43,7 +48,7 @@ The differences are listed in table \ref{tab:diff}.
         \hline
         \end{tabularx}
         \label{tab:diff}
-\end {table}
+\end{table}
 
 While any of these differences can be resolved by changing the \Cycamore
 archetype source code, none require a change to the \Cyclus framework. Notably, 
